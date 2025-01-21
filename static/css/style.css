@@ -1,0 +1,442 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+
+    font-family: 'Poppins', sans-serif;
+    background-color: rgb(230 203 176);
+}   
+.logo img{
+    margin-top: -5%;
+    width: 55%;
+    padding-top: 0px;
+    padding-left: 45px;
+}
+.navbar
+{
+    display: flex;
+    align-items: center;
+
+    padding: 20px;
+
+}
+
+nav{
+    margin-top: -2%;
+    flex: 1;
+    text-align: right;
+    padding-top: 5px;
+
+}
+nav ul{
+    display: inline-block;
+    list-style-type: none;
+
+}
+nav ul li{
+    display: inline-block;
+    margin-right: 20px;
+
+}
+
+#MenuItems li a{
+    text-decoration: none;
+    color: #000000 !important;
+    font-weight: 600;
+}
+#MenuItems li a:hover{
+    background-color: white;
+    color: black;
+    padding: 5px 8px;
+    border-radius: 25px;
+}
+
+/* Main section */
+.text1{
+    font-size: 300%;
+    padding-left: 150px;
+    padding-top: 40px;
+    font-weight: 900;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+.main_text a{
+    text-decoration: none;
+    color: white;
+    border: 1px solid rgb(182, 209, 182);
+    background-color: rgb(182, 209, 182);
+    border-radius: 25px;
+    font-weight: 700;
+    padding: 10px 15px;
+    margin-top: 4%;
+    margin-left: 60%;
+    font-size: 170%;
+}
+.main_text a:hover{
+    background-color: red;
+    color: white;
+}
+.main_image img{
+    width: 40%;
+    height: 90%;
+    margin-left: 40%;
+}
+.welcome_image img{
+    width: 74%;
+    height: 90%;
+    margin-left: 13%;
+    margin-top: 2%;
+}
+.welcome_text h3{
+    font-size: 153%;
+    margin-left: 260px;
+    margin-top: 23px;
+    font-weight: 700;
+}
+.welcome_text h2{
+    font-size: 510%;
+    padding-left: 150px;
+    padding-top: 40px;
+
+}
+.welcome_login a{
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    border: 1px solid  rgb(230 203 176);
+    border-radius: 25px;
+    font-weight: 700;
+    padding: 6px 38px;
+    margin-top: 10%;
+    font-size: 170%;
+}
+.welcome_login a:hover{
+    color: rgb(255, 0, 0);
+}
+
+
+.image-container {
+    position: relative;
+    width: 50%;
+    float: left;
+    text-align: center;
+}
+.button-link {
+    position: absolute;
+    top: 50%;
+    left: 58%;
+    text-decoration: none;
+    transform: translate(-50%, -50%);
+    padding: 8px 16px;
+    border-radius: 25px;
+    color: rgb(255, 255, 255);
+    font-weight: 700;
+    background-color: rgb(119, 3, 3);
+}
+.button-links {
+    position: absolute;
+    top: 50%;
+    left: 27%;
+    text-decoration: none;
+    transform: translate(-50%, -50%);
+    padding: 8px 16px;
+    border-radius: 25px;
+    color: rgb(255, 255, 255);
+    font-weight: 700;
+    background-color: rgb(119, 3, 3);
+}
+.button-link:hover, .button-links:hover{
+    background-color: #555;
+    color: white;
+}
+
+
+
+/* encryption.html */
+
+.encrypt_text h3, .decrypt_text h3{
+    font-size: 150%;
+    padding-left: 0px;
+    padding-top: 2%;
+    font-weight: 600;
+    text-align: center;
+}
+
+.encrypt_text h1{
+    font-size: 150%;
+    width: 25%;
+    padding: 4px 8px;
+    margin-top: 2%;
+    font-weight: 600;
+    background-color: #555;
+    border-radius: 12px;
+    color: rgb(230 203 176);
+}
+.decrypt_text h1{
+    font-size: 150%;
+    width: 30%;
+    padding: 4px 12px;
+    margin-top: 2%;
+    font-weight: 600;
+    background-color: #555;
+    border-radius: 12px;
+    color: rgb(230 203 176);
+}
+.form-group label{
+    font-size: 100%;
+    padding-left: 0px;
+    padding-top: 0%;
+    font-weight: 600;
+}
+
+
+/* Account page */
+.account-page{
+    padding: 50px 0;
+    background: rgb(230 203 176);
+}
+.form-container{
+    background: #fff;
+    width: 300px;
+    height: 400px;
+    position: relative;
+    text-align: center;
+    padding: 20px 0;
+    margin: auto;
+    box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+.form-container span{
+    font-weight: bold;
+    padding: 0 10px;
+    color: #555;
+    cursor: pointer;
+    width: 100px;
+    display: inline-block;
+}
+.form-btn{
+    display: inline-block;
+}
+.form-container form{
+    max-width: 300px;
+    padding: 0 20px;
+    position: absolute;
+    top: 130px;
+    transition: transform 1s;
+}
+form input{
+    width: 100%;
+    height: 30px;
+    margin: 10px 0;
+    padding: 0 10px;
+    border: 1px solid #ccc;
+}
+form .btn{
+    width: 100%;
+    background-color: #333;
+    padding: 4px 8px;
+    color: #00c3ff;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    margin: 10px 0;
+}
+form .btn:hover{
+    background-color:  #00c3ff;
+    color: white;
+}
+form .btn:focus{
+    outline: none;
+}
+#LoginForm{
+    left: -300px;
+}
+#RegForm{
+    left: 0;
+}
+form a{
+    font-size: 12px;
+}
+#Indicator{
+    width: 100px;
+    border: none;
+    background: #ff523b;
+    height: 3px;
+    margin-top: 8px;
+    transform: translateX(100px);
+    transition: transform 1s;
+}
+footer p{
+    font-size: 100%;
+    text-align: center;
+    margin-top: 5%;
+}
+
+/* Testimonial */
+
+.testimonial-section {
+    max-width: 800px;
+    margin: 50px 350px;
+    text-align: center;
+}
+
+.testimonial-title {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.testimonials-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.testimonial-card {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    flex: 1;
+}
+
+.testimonial-card p {
+    font-size: 1em;
+    line-height: 1.5;
+    color: #555;
+}
+
+.testimonial-card .author {
+    margin-top: 15px;
+    font-weight: bold;
+    color: #333;
+}
+
+@media only screen and (max-width: 767px) {
+    .testimonials-container {
+        flex-direction: column;
+    }
+}
+
+
+
+/* Bottom Part */
+.bottom{
+    background-color: #748484;
+    margin-top: 8%;
+    border-radius: 30px;
+}
+.start-now h3{
+    font-size: 115%;
+    font-weight: 500;
+    color: rgb(230 203 176);
+    padding-top: 10%;
+    padding-left: 5%;
+}
+.start-now h2{
+    font-size: 260%;
+    padding-top: 15px;
+    font-weight: 600;
+    padding-left: 5%;
+    color: white;
+    
+}
+.bottom-image img{
+    position: relative;
+    display: flex;
+    padding-top: 0%;
+    width: 72%;
+    height: 90%;
+    margin-left: 51%;
+    padding-bottom: 10%;
+}
+.start-now form{
+    padding-top: 7%;
+    padding-left: 5%;
+}
+.start-now input{
+    padding: 2% 7%;
+    border-radius: 5px;
+    font-size: 120%;
+    font-weight: 600;
+    border: 1px solid rgb(246, 246, 246);
+}
+.start-now button{
+    padding:3% 5%;
+    border: 1px solid rgb(230 203 176);
+    border-radius: 5px;
+    position: relative;
+    font-weight: 600;
+    background-color: rgb(230 203 176);
+    margin-left: 1%;
+    color: white;
+}
+.start-now button:hover{
+    background-color: white;
+    color: #008080;
+}
+.start-now p{
+    color: white;
+    padding-top: 5%;
+    padding-left: 5%;
+}
+.start-now p a{
+    text-decoration: none;
+    color: rgb(98, 23, 23);
+}
+.start-now p a:hover{
+    color: rgb(0, 0, 0);
+}
+
+
+
+/* Main section */
+.global{
+    margin-left: 130px;
+}
+.global h2{
+    font-size: 390%;
+    padding-top: 60px;
+    font-weight: 600;
+}
+.global p{
+    font-size: 130%;
+    padding-top: 30px;
+    font-weight: 600;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: #555;
+}
+.main-image{
+    margin-left: 6%;
+
+}
+.main-image img{
+    width: 100%;
+    height: 90%;
+    position: relative;
+    padding-top: 11%;
+}
+.global form{
+    padding-top: 7%;
+}
+.global input{
+    padding: 2% 5%;
+    border-radius: 5px;
+    font-size: 120%;
+    font-weight: 600;
+    border: 1px solid rgb(246, 246, 246);
+}
+.global button{
+    padding:2.5% 5%;
+    border: 1px solid #f63030;
+    border-radius: 5px;
+    position: relative;
+    font-weight: 600;
+    background-color: #f63030;
+    color: white;
+}
+.global button:hover{
+    background-color: white;
+    color: #f63030;
+}
