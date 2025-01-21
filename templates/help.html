@@ -1,0 +1,118 @@
+{% load static %}
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title>Steganography Project</title>
+    <link rel="stylesheet" href="{% static '/css/style.css' %}">
+    <style>
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background: #d7cfcf;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #444c44;
+            text-align: center;
+        }
+        ul {
+            line-height: 1.8;
+        }
+        .section {
+            margin-bottom: 20px;
+        }
+        .section h2 {
+            color: #474c47;
+            margin-bottom: 10px;
+        }
+        .back-btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            color: #fff;
+            background-color: #494949;
+            text-decoration: none;
+            border-radius: 5px;
+            text-align: center;
+        }
+        .back-btn:hover {
+            background-color: #008cff;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <div class="logo">
+            <img src="{% static 'images/st  logo.png' %}" alt=""> 
+       </div>
+        <nav>
+            <ul id="MenuItems">
+                <li><a href="{% url 'index' %}">Home</a></li>
+                <li><a href="{% url 'encryption' %}">Embed</a></li>
+                <li><a href="{% url 'decryption' %}">Extract</a></li>
+                <li><a href="{% url 'edit_encryption' %}">Edit</a></li>
+                <li><a href="{% url 'help' %}">Help</a></li>
+                <li><a href="{% url 'contact' %}">Contact</a></li>
+                <li><a href="{% url 'logout' %}">Logout</a></li>
+            </ul>
+        </nav>
+        </div>
+ 
+        <div class="container">
+            <h1>Help & Support</h1>
+            <p>Welcome to the Steganography Studio help page. Follow the steps below to use our platform effectively.</p>
+            
+            <div class="section">
+                <h2>1. Embedding Messages</h2>
+                <ul>
+                    <li>Navigate to the "Embed" section from the menu.</li>
+                    <li>Upload your host file (image, text).</li>
+                    <li>Enter the message you want to hide.</li>
+                    <li>Choose security options like encryption (optional).</li>
+                    <li>Click the "Embed" button to hide the message in the file.</li>
+                    <li>Download the steganographic file for sharing.</li>
+                </ul>
+            </div>
+            
+            <div class="section">
+                <h2>2. Extracting Messages</h2>
+                <ul>
+                    <li>Go to the "Extract" section from the menu.</li>
+                    <li>Upload the steganographic file containing the hidden message.</li>
+                    <li>Provide the decryption key if applicable.</li>
+                    <li>Click the "Extract" button to reveal the hidden message.</li>
+                </ul>
+            </div>
+            
+            <div class="section">
+                <h2>3. Editing Files</h2>
+                <ul>
+                    <li>Use the "Editor" section to modify or preview your files.</li>
+                    <li>Upload a file and adjust encoding parameters as needed.</li>
+                    <li>Preview results before saving changes.</li>
+                </ul>
+            </div>
+            
+            <div class="section">
+                <h2>4. Troubleshooting</h2>
+                <ul>
+                    <li>If the file fails to upload, ensure it meets the supported format.</li>
+                    <li>Check if the decryption key is correct when extracting messages.</li>
+                    <li>Contact support if you encounter persistent issues.</li>
+                </ul>
+            </div>
+            
+            <a href="/" class="back-btn">Go Back to Home</a>
+        </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+

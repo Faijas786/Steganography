@@ -1,0 +1,157 @@
+{% load static %}
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title>Steganography Project</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <style>
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background: #d8d0d0;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #586059;
+            text-align: center;
+        }
+        p {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        label {
+            font-weight: bold;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        textarea {
+            resize: vertical;
+            height: 100px;
+        }
+        .btn {
+            padding: 10px 20px;
+            background-color: #676f68;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-align: center;
+        }
+        .btn:hover {
+            background-color: #00a6ff;
+        }
+        .contact-info {
+            margin-top: 20px;
+            text-align: center;
+        }
+        .contact-info h2 {
+            color: #535a53;
+        }
+        .contact-info p {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <div class="logo">
+            <img src="{% static 'images/st  logo.png' %}" alt=""> 
+       </div>
+        <nav>
+            <ul id="MenuItems">
+                <li><a href="{% url 'index' %}">Home</a></li>
+                <li><a href="{% url 'encryption' %}">Embed</a></li>
+                <li><a href="{% url 'decryption' %}">Extract</a></li>
+                <li><a href="{% url 'edit_encryption' %}">Edit</a></li>
+                <li><a href="{% url 'help' %}">Help</a></li>
+                <li><a href="{% url 'contact' %}">Contact</a></li>
+                <li><a href="{% url 'logout' %}">Logout</a></li>
+
+            </ul>
+        </nav>
+        </div>
+ 
+
+        
+<div class="section">
+    <div class="row text2">
+        
+        <div class="col-5 global">
+            <h2 style="font-size: 250%;"><span style="color: #800000;">Steganography </span>  balances security and usability for digital privacy</h2>
+            <p style="font-size: 110%;">Steganography is widely trusted in cybersecurity and digital forensics, offering a reliable method for safeguarding confidential data and verifying authenticity.When implemented correctly, steganography in images and videos provides a robust layer of security without compromising the quality or usability of the host file</p>
+
+            <form action="#" method="POST">
+                <input type="email" name="email" placeholder="Your email address" required>
+                <button>Get Started</button>
+
+            </form>
+        </div>
+
+        <div class="col-4 main-image">
+            <img src=" {% static 'images/ss1.png' %}" alt="main-imag">
+        </div>
+    </div>
+</div>
+
+<h1 style="font-size: 150%;font-weight: 900;color: #800000;margin-left: -70%;margin-top: 5%;">Contact Us :-</h1>
+
+        <div class="container">
+            <p>If you have any questions or need support, feel free to reach out to us using the form below.</p>
+            
+            <form action="#" method="POST">
+                {% csrf_token %}
+                <label for="name">Your Name</label>
+                <input type="text" id="name" name="name" placeholder="Enter your name" required>
+                
+                <label for="email">Your Email</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                
+                <label for="message">Your Message</label>
+                <textarea id="message" name="message" placeholder="Enter your message" required></textarea>
+                
+                <button type="submit" class="btn">Send Message</button>
+            </form>
+            
+            <div class="contact-info">
+                <h2>Contact Information</h2>
+                <p>Email: steganographystudio1@gmail.com</p>
+                <p>Phone: +91 9595959595</p>
+                <p>Address: Nilgiri College of Arts & Science , Thaloor, The Nilgiris</p>
+            </div>
+        </div>
+  <!-- Testimonial  -->
+
+  <div class="testimonial-section">
+    <h2 class="testimonial-title">What Our Clients Say</h2>
+    <div class="testimonials-container">
+        <div class="testimonial-card">
+            <p>"This service is fantastic! It exceeded all my expectations."</p>
+            <div class="author">- John</div>
+        </div>
+        <div class="testimonial-card">
+            <p>"A truly professional experience from start to finish. Highly recommend!"</p>
+            <div class="author">- Smith</div>
+        </div>
+    </div>
+</div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+

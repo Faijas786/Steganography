@@ -1,0 +1,240 @@
+{% load static %}
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title>Steganography Project</title>
+    <link rel="stylesheet" href="{% static '/css/style.css' %}">
+    <style>
+    
+        .slideshow-container {
+            width: 50%;
+            height: 100%;
+            position: relative;
+            margin: auto;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .slide {
+            display: none;
+            text-align: center;
+            position: relative;
+        }
+        .slide img {
+            width: 100%;
+            height: 50%;
+            padding: 11% 10% 11% 10%;
+            border-radius: 10px;
+        }
+        .text {
+            position: absolute;
+            bottom: 50%;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: rgba(0, 0, 0, 0.6);
+            color: #fff;
+            padding: 10px 20px;
+            font-weight: 700;
+            border-radius: 5px;
+            font-size: 18px;
+        }
+        .dots {
+            text-align: center;
+            margin-top: 10px;
+        }
+        .dot {
+            cursor: pointer;
+            height: 15px;
+            width: 15px;
+            margin: 0 5px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.6s ease;
+        }
+        .active, .dot:hover {
+            background-color: #717171;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <div class="logo">
+            <img src="{% static 'images/st  logo.png' %}" alt=""> 
+       </div>
+        <nav>
+            <ul id="MenuItems">
+                <li><a href="{% url 'index' %}">Home</a></li>
+                <li><a href="{% url 'encryption' %}">Embed</a></li>
+                <li><a href="{% url 'decryption' %}">Extract</a></li>
+                <li><a href="{% url 'edit_encryption' %}">Edit</a></li>
+                <li><a href="{% url 'help' %}">Help</a></li>
+                <li><a href="{% url 'contact' %}">Contact</a></li>
+                <li><a href="{% url 'logout' %}">Logout</a></li>
+            </ul>
+        </nav>
+        </div>
+
+        <div class="container encrypt_text">
+            <h3>" <span style="color: rgb(0, 162, 255);">Welcome</span> to <span style="color: rgb(255, 0, 0);">Steganography Studio</span> <br>Your gateway to secure communication!"</h3>
+
+            <h1 class="text-center">Encrypt Your Image</h1>
+        
+        <form action="{% url 'encryption' %}" method="post" enctype="multipart/form-data">
+         {% csrf_token %} 
+       <div class="form-group">
+            <label for="image">Select an Image:</label>
+            <input type="file" class="form-control-file" id="image" name="image" required>
+        </div>
+        <div class="form-group">
+            <label for="text">Enter the Text:</label>
+            <textarea class="form-control" id="text" name="text" rows="3" required></textarea>
+        </div>
+        <div class="form-group">
+            <label for="password">Set a Password:</label>
+            <input type="password" class="form-control" id="password" name="password" required>
+        </div>
+        <button type="submit" class="btn btn-primary" style="width: 15%;">Submit</button>
+        </form>
+             {% if message %} 
+                <p style="align-items: center;color:red;font-weight:700;">{{ message }}</p>
+         {% endif %} 
+        </div>
+
+
+
+
+
+<div>
+    <div class="container encrypt_text">
+        <h1 class="text-center">Encrypt Your Video</h1>
+        <form action="{% url 'encryption_video' %}" method="post" enctype="multipart/form-data" class="mt-4">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="video">Select a Video:</label>
+                <input type="file" class="form-control-file" id="video" name="video" required>
+            </div>
+            <div class="form-group">
+                <label for="text">Enter the Text:</label>
+                <textarea class="form-control" id="text" name="text" rows="3" placeholder="Enter the message you want to hide..." required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="password">Set Password:</label>
+                <input type="password" class="form-control" id="password" name="password" placeholder="Enter a secure password" required>
+            </div>
+            <button type="submit" class="btn btn-primary" style="width: 15%;">Submit</button>
+        </form>
+        {% if message %}
+            <div class="alert alert-info text-center mt-3">{{ message }}</div>
+        {% endif %}
+    </div> 
+</div>
+
+
+        <div class="col-7">
+            <!-- Dots for Navigation -->
+<div class="dots"  style="margin-left: 70%;">
+   <span class="dot" onclick="currentSlide(1)"></span>
+   <span class="dot" onclick="currentSlide(2)"></span>
+   <span class="dot" onclick="currentSlide(3)"></span>
+   <span class="dot" onclick="currentSlide(4)"></span>
+</div>
+
+<div class="slideshow-container" style="margin-left: 60%;">
+   <!-- Slide 1 -->
+   <div class="slide">
+       <img src=" {% static 'images/og1.jpeg' %}" alt="Slide 1">
+       <div class="text"> Welcome to Steganography Studio</div>
+   </div>
+
+   <!-- Slide 2 -->
+   <div class="slide">
+       <img src=" {% static 'images/og2.jpeg' %}" alt="Slide 2">
+       <div class="text">Secure Your Data with Ease</div>
+   </div>
+
+   <!-- Slide 3 -->
+   <div class="slide">
+       <img src=" {% static 'images/og5.jpeg' %}" alt="Slide 3">
+       <div class="text">Hide Messages in Multimedia Files</div>
+   </div>
+
+   <!-- Slide 4 -->
+   <div class="slide">
+       <img src=" {% static 'images/og4.jpeg' %}" alt="Slide 4">
+       <div class="text"> Advanced Steganography Tools</div>
+   </div>
+</div>
+
+       </div>
+
+
+
+  <!-- Testimonial  -->
+
+  <div class="testimonial-section">
+    <h2 class="testimonial-title" style="font-weight: 700;">What Our Clients Say</h2>
+    <div class="testimonials-container">
+        <div class="testimonial-card">
+            <p>"This service is fantastic! It exceeded all my expectations."</p>
+            <div class="author">- John</div>
+        </div>
+        <div class="testimonial-card">
+            <p>"A truly professional experience from start to finish. Highly recommend!"</p>
+            <div class="author">- Smith</div>
+        </div>
+    </div>
+</div>
+
+    <footer>
+        <hr>
+        <p>© Copyrights for Steganography</p>
+    </footer>
+     <script>
+        let slideIndex = 0;
+        autoSlides();
+
+        function autoSlides() {
+            let slides = document.getElementsByClassName("slide");
+            let dots = document.getElementsByClassName("dot");
+
+            // Hide all slides
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+
+            // Increment the slide index
+            slideIndex++;
+
+            // Reset to the first slide if it exceeds the number of slides
+            if (slideIndex > slides.length) {
+                slideIndex = 1;
+            }
+
+            // Remove the active class from all dots
+            for (let i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+
+            // Display the current slide and activate the corresponding dot
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " active";
+
+            // Change slide every 2 seconds
+            setTimeout(autoSlides, 1800);
+        }
+
+        function currentSlide(n) {
+            slideIndex = n - 1; // Adjust slide index for autoSlides logic
+            autoSlides();
+        }
+    </script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+

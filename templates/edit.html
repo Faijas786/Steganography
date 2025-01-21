@@ -1,0 +1,125 @@
+{% load static %}
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title>Steganography Project</title>
+    <link rel="stylesheet" href="{% static '/css/style.css' %}">
+    <style>
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background: #d7cfcf;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #444c44;
+            text-align: center;
+        }
+        ul {
+            line-height: 1.8;
+        }
+        .section {
+            margin-bottom: 20px;
+        }
+        .section h2 {
+            color: #474c47;
+            margin-bottom: 10px;
+        }
+        .back-btn, button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            color: #fff;
+            background-color: #494949;
+            text-decoration: none;
+            border-radius: 5px;
+            text-align: center;
+            margin-bottom:1%;
+        }
+        .back-btn:hover, button:hover{
+            background-color: #008cff;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <div class="logo">
+            <img src="{% static 'images/st  logo.png' %}" alt=""> 
+       </div>
+        <nav>
+            <ul id="MenuItems">
+                <li><a href="{% url 'index' %}">Home</a></li>
+                <li><a href="{% url 'encryption' %}">Embed</a></li>
+                <li><a href="{% url 'decryption' %}">Extract</a></li>
+                <li><a href="{% url 'edit_encryption' %}">Edit</a></li>
+                <li><a href="{% url 'help' %}">Help</a></li>
+                <li><a href="{% url 'contact' %}">Contact</a></li>
+                <li><a href="{% url 'logout' %}">Logout</a></li>
+
+            </ul>
+        </nav>
+        </div>
+ 
+        <div class="container edit_text">
+            <h3 style="font-size: 146%; font-weight: 700;padding-bottom: 3%;">
+                <span style="color: rgb(0, 162, 255);">Refine Your Message,</span> 
+                ensure perfection with <span style="color: rgb(255, 0, 0);">Steganography Studio</span>
+            </h3>
+            <h1 class="text-center">Edit Encrypted Data</h1>
+            
+            <form method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                <h2>Decrypt Text</h2>
+                <label for="current_image">Encrypted Image:</label>
+                <input type="file" name="current_image" required>
+                <label for="current_password">Current Password:</label>
+                <input type="password" name="current_password" required>
+                <button type="submit" name="decrypt">Decrypt</button>
+            </form>
+            
+            {% if decrypted_text %}
+                <h3>Decrypted Text:</h3>
+                <textarea readonly>{{ decrypted_text }}</textarea>
+            {% endif %}
+            
+            <form method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                <h2>Update Text</h2>
+                <label for="current_image">Encrypted Image:</label>
+                <input type="file" name="current_image" required>
+                <label for="current_password">Current Password:</label>
+                <input type="password" name="current_password" required>
+                <label for="new_text">New Text:</label>
+                <textarea name="new_text" required></textarea>
+                <label for="new_password">New Password:</label>
+                <input type="password" name="new_password" required>
+                <button type="submit" name="update">Update</button>
+            </form>
+            
+            {% if uploaded_image_url %}
+                <h3>Uploaded Image:</h3>
+                <img src="{{ uploaded_image_url }}" alt="Uploaded Image">
+            {% endif %}
+            
+            {% if updated_image_url %}
+                <h3>Updated Image:</h3>
+                <img src="{{ updated_image_url }}" alt="Updated Image" style="width:50%">
+                <p>Download your updated image <a href="{{ updated_image_url }}">here</a>.</p>
+            {% endif %}
+            
+            <p style="align-items: center;color:red;font-weight:700;">{{ message }}</p>
+            
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+
+
+
+

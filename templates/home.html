@@ -1,0 +1,42 @@
+{% load static %}
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title>Steganography Project</title>
+    <link rel="stylesheet" href="{% static '/css/style.css' %}">
+  
+</head>
+<body>
+    <div class="navbar">
+        <div class="logo">
+            <img src="{% static 'images/st  logo.png' %}" alt=""> 
+       </div>
+        </div>
+ 
+
+     <div class="section">
+        <div class="row">
+            <div class="col-4 welcome_image">
+                <img src=" {% static 'images/image6767.png' %}" alt="">
+            </div>
+            <div class="col-6 welcome_text">
+                <h3>" <span style="color: red;">Welcome</span> to <span style="color: white;">Steganography Studio</span> <br>Your gateway to secure communication!"</h3>
+                <h2 class="text12"><span style="color: white;font-weight: 600;">Hide</span> messages,<br>ensure <span style="color: rgb(0, 195, 255);font-weight: 600;">security</span></h2>
+                <div class="welcome_login" style="display: flex; margin-left: 24%;">
+                    <a style="background-color: white;" href="{% url 'account' %}">Login</a>
+                    <a style="background-color: rgb(104, 176, 176);margin-left: 3%;" href="{% url 'account' %}">Signup</a>
+                </div>
+            </div>
+           
+        </div>
+     </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
